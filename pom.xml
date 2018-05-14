@@ -122,7 +122,7 @@
 				<configuration>
 					<nexusUrl>${nexus.proxy}</nexusUrl>
 					<stagingProfileId>${staging.profile.id}</stagingProfileId>
-					<serverId>ecomp-staging</serverId>
+					<serverId>onap-staging</serverId>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -130,17 +130,17 @@
         <repositories>
            <!-- LF repositories -->
              <repository>
-                 <id>ecomp-releases</id>
+                 <id>onap-releases</id>
                  <name>Release Repository</name>
                  <url>${nexus.proxy}/content/repositories/releases/</url>
              </repository>
              <repository>
-                 <id>ecomp-snapshots</id>
+                 <id>onap-snapshots</id>
                  <name>Snapshots Repository</name>
                  <url>${nexus.proxy}/content/repositories/snapshots/</url>
              </repository>
              <repository>
-                 <id>ecomp-public</id>
+                 <id>onap-public</id>
                  <name>Public Repository</name>
                  <url>${nexus.proxy}/content/repositories/public/</url>
              </repository>
@@ -149,17 +149,17 @@
 
         <distributionManagement>
              <repository>
-                 <id>ecomp-releases</id>
+                 <id>onap-releases</id>
                  <name>Release Repository</name>
                  <url>${nexus.proxy}/content/repositories/releases/</url>
              </repository>
              <snapshotRepository>
-                 <id>ecomp-snapshots</id>
+                 <id>onap-snapshots</id>
                  <name>Snapshot Repository</name>
                  <url>${nexus.proxy}/content/repositories/snapshots/</url>
              </snapshotRepository>
              <site>
-                 <id>ecomp-site</id>
+                 <id>onap-site</id>
                  <url>dav:${nexus.proxy}${sitePath}</url>
              </site>
        </distributionManagement>
