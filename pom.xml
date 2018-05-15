@@ -122,7 +122,7 @@
 				<configuration>
 					<nexusUrl>${nexus.proxy}</nexusUrl>
 					<stagingProfileId>${staging.profile.id}</stagingProfileId>
-					<serverId>onap-staging</serverId>
+					<serverId>ecomp-staging</serverId>
 				</configuration>
 			</plugin>
 		</plugins>
