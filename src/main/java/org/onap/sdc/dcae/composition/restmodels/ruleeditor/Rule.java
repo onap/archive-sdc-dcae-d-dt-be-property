@@ -86,10 +86,12 @@ public class Rule {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (obj == this)
+		if (obj == this) {
 			return true;
-		if (null == obj || getClass() != obj.getClass())
+		}
+		if (null == obj || getClass() != obj.getClass()) {
 			return false;
+		}
 		Rule other = (Rule) obj;
 		return Objects.equals(version, other.version) &&
 				Objects.equals(description, other.description) &&

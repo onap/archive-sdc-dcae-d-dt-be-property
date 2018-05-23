@@ -1,8 +1,6 @@
 package org.onap.sdc.dcae.composition.restmodels.ruleeditor;
 
-import com.google.gson.annotations.SerializedName;
-
-public class DateFormatterAction extends BaseAction {
+public class DateFormatterAction extends BaseCopyAction {
 
 	private DateFormatter dateFormatter = new DateFormatter();
 

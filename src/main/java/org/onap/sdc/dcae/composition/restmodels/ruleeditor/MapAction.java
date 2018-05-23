@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 import com.google.gson.annotations.SerializedName;
 
-public class MapAction extends BaseAction {
+public class MapAction extends BaseCopyAction {
 
 	private Transform map;
 
@@ -85,7 +85,7 @@ public class MapAction extends BaseAction {
 
 	}
 
-	public Map<String, String> transformToMap() throws IllegalStateException {
+	public Map<String, String> transformToMap() {
 		return getMap().getValues().stream().collect(Collectors.toMap(UIHashMap::getKey, UIHashMap::getValue));
 	}
 

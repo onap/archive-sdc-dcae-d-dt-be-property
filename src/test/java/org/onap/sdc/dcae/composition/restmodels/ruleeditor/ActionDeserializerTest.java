@@ -4,9 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-import org.onap.sdc.dcae.composition.restmodels.ruleeditor.ActionDeserializer;
-import org.onap.sdc.dcae.composition.restmodels.ruleeditor.BaseAction;
-import org.onap.sdc.dcae.composition.restmodels.ruleeditor.MapAction;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -18,7 +15,7 @@ public class ActionDeserializerTest {
 
 	@Test
 	public void deserializerTest(){
-		BaseAction action = new BaseAction();
+		BaseCopyAction action = new BaseCopyAction();
 		action.setActionType("map");
 		String input = gson.toJson(action);
 		BaseAction res = gson.fromJson(input, BaseAction.class);

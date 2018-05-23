@@ -3,7 +3,7 @@ package org.onap.sdc.dcae.composition.restmodels.ruleeditor;
 import java.util.Arrays;
 
 public enum ActionTypeEnum {
-	COPY("copy"), MAP("map"), CONCAT("concat"), DATE_FORMATTER("dateFormatter");
+	COPY("copy"), MAP("map"), CONCAT("concat"), DATE_FORMATTER("dateFormatter"), LOG_EVENT("logEvent"), LOG_TEXT("logText"), CLEAR("clear"), REPLACE_TEXT("replaceText");
 
 	private String type;
 

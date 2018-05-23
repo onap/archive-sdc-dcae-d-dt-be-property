@@ -6,7 +6,7 @@ import java.lang.reflect.Type;
 public class ActionDeserializer implements JsonDeserializer<BaseAction> {
 
 	@Override
-	public BaseAction deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+	public BaseAction deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) {
 		String action;
 		try {
 			action = json.getAsJsonObject().get("actionType").getAsString();
@@ -14,8 +14,9 @@ public class ActionDeserializer implements JsonDeserializer<BaseAction> {
 			throw new JsonParseException("Missing information : action type");
 		}
 		ActionTypeEnum actionTypeEnum = ActionTypeEnum.getTypeByName(action);
-		if (null == actionTypeEnum)
+		if (null == actionTypeEnum) {
 			throw new JsonParseException("Undefined action type: " + action);
+		}
 		Type clazz = getActionClassByActionTypeEnum(actionTypeEnum);
 		return new Gson().fromJson(json, clazz);
 	}
@@ -26,8 +27,17 @@ public class ActionDeserializer implements JsonDeserializer<BaseAction> {
 			return MapAction.class;
 		case DATE_FORMATTER:
 			return DateFormatterAction.class;
+		case LOG_EVENT:
+			return LogEventAction.class;
+		case LOG_TEXT:
+			return LogTextAction.class;
+		case CLEAR:
+			return UnaryFieldAction.class;
+		case REPLACE_TEXT:
+			return ReplaceTextAction.class;
 		default:
-			return BaseAction.class;
+			// suitable for copy/regex/concat
+			return BaseCopyAction.class;
 		}
 	}
 
