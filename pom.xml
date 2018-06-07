@@ -15,6 +15,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<sonar.branch>${project.version}</sonar.branch>
 		<sonar.skip>true</sonar.skip>
+		<sonar.coverage.exclusions>**</sonar.coverage.exclusions>
 	</properties>
 	<dependencies>
 		<dependency>
