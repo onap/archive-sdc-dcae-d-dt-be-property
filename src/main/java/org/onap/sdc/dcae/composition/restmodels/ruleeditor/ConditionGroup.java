@@ -1,6 +1,7 @@
 package org.onap.sdc.dcae.composition.restmodels.ruleeditor;
 
 import java.util.List;
+import java.util.Objects;
 
 public class ConditionGroup extends BaseCondition {
 
@@ -26,6 +27,17 @@ public class ConditionGroup extends BaseCondition {
 	@Override
 	public boolean referencesTarget(String target) {
 		return children.stream().anyMatch(c -> c.referencesTarget(target));
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return super.equals(obj) && Objects.equals(type, ((ConditionGroup)obj).type) &&
+				Objects.equals(children, ((ConditionGroup)obj).children);
+	}
+
+	@Override
+	public int hashCode(){
+		return Objects.hash(type, children);
 	}
 
 }

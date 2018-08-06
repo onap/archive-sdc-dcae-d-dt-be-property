@@ -32,9 +32,16 @@ public class ActionDeserializer implements JsonDeserializer<BaseAction> {
 		case LOG_TEXT:
 			return LogTextAction.class;
 		case CLEAR:
+		case CLEAR_NSF:
 			return UnaryFieldAction.class;
 		case REPLACE_TEXT:
 			return ReplaceTextAction.class;
+		case HP_METRIC:
+			return HpMetricAction.class;
+		case STRING_TRANSFORM:
+			return StringTransformAction.class;
+		case TOPO_SEARCH:
+			return TopoSearchAction.class;
 		default:
 			// suitable for copy/regex/concat
 			return BaseCopyAction.class;

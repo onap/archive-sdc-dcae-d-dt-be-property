@@ -18,23 +18,26 @@ public class BaseCopyAction extends UnaryFieldAction {
 	}
 
 
-	public String getFromValue() {
+	public String fromValue() {
 		if(null == getFrom()) {
 			return null;
 		}
-		return StringUtils.isNoneBlank(getFrom().getValue()) ? getFrom().getValue() : StringUtils.join(getFromValues(), "");
+		return StringUtils.isNoneBlank(getFrom().getValue()) ? getFrom().getValue() : StringUtils.join(fromValues(), "");
 	}
 
 
-	public String getRegexValue() {
+	public String regexValue() {
 		return getFrom().getRegex();
 	}
 
+	//using 'other != this' rather than '!this.equals(other)' because technically it is possible to have two identical actions that are not the same action
+	@Override
 	public boolean referencesTarget(BaseAction other) {
 		return getFrom().referencesTarget(other.strippedTarget()) ||
 				other != this && !CollectionUtils.isEmpty(getFrom().getValues()) && getFrom().getValues().stream().anyMatch(p -> p.referencesTarget(other.strippedTarget()));
 	}
 
+	@Override
 	public String strippedTarget() {
 		return target.startsWith("${") && target.endsWith("}") ? target.substring(2, target.length()-1) : target;
 	}
@@ -42,7 +45,6 @@ public class BaseCopyAction extends UnaryFieldAction {
 	@Override
 	public boolean equals(Object obj) {
 		return super.equals(obj) && Objects.equals(target, ((BaseCopyAction)obj).target);
-
 	}
 
 	@Override

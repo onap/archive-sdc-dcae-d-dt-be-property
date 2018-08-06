@@ -1,5 +1,6 @@
 package org.onap.sdc.dcae.composition.restmodels.ruleeditor;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.apache.commons.lang3.StringUtils;
@@ -8,15 +9,47 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Rule {
-	private String version;
-	private String eventType;
-	private String description;
-	private String uid;
-	private String phase = "phase_1"; //placeholder
-	private BaseCondition condition;
-	private List<BaseAction> actions;
 
 	private static Gson gson = new GsonBuilder().serializeNulls().create();
+
+	private String version;
+	private String eventType;
+	// US405978 set notifyOID
+	private String notifyId;
+	private String description;
+	private String uid;
+	private String phase;
+	private BaseCondition condition;
+	private List<BaseAction> actions;
+	// US420764 support phases configuration
+	private String entryPhase; //global translation value
+	private String publishPhase; //global translation value
+	// US427299 phase grouping
+	private String groupId; //rules can be grouped into phase units. the global entry phase calls runPhase on phase_1, phase_1 on phase_2, etc.
+
+	public String getEntryPhase() {
+		return entryPhase;
+	}
+
+	public void setEntryPhase(String entryPhase) {
+		this.entryPhase = entryPhase;
+	}
+
+	public String getPublishPhase() {
+		return publishPhase;
+	}
+
+	public void setPublishPhase(String publishPhase) {
+		this.publishPhase = publishPhase;
+	}
+
+	public String getGroupId() {
+		return groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+	}
 
 	public String getVersion() {
 		return version;
@@ -67,6 +100,14 @@ public class Rule {
 		this.description = description;
 	}
 
+	public String getNotifyId() {
+		return notifyId;
+	}
+
+	public void setNotifyId(String notifyId) {
+		this.notifyId = notifyId;
+	}
+
 	public BaseCondition getCondition() {
 		return condition;
 	}
@@ -75,9 +116,10 @@ public class Rule {
 		this.condition = condition;
 	}
 
-	public void generateUid() {
-		if(StringUtils.isBlank(uid))
+	void generateUid() {
+		if(StringUtils.isBlank(uid)) {
 			uid = UUID.randomUUID().toString();
+		}
 	}
 
 	public String toJson() {
@@ -93,23 +135,40 @@ public class Rule {
 			return false;
 		}
 		Rule other = (Rule) obj;
-		return Objects.equals(version, other.version) &&
-				Objects.equals(description, other.description) &&
-				Objects.equals(eventType, other.eventType) &&
-				Objects.equals(uid, other.uid) &&
-				Objects.equals(phase, other.phase) &&
+		return globalFieldsEqual(other) && localFieldsEqual(other) &&
 				Objects.equals(condition, other.condition) &&
 				Objects.equals(actions, other.actions);
 	}
 
-	@Override
-	public int hashCode(){
-		return Objects.hash(this.version,this.description,this.eventType,this.uid,this.phase,this.condition,this.actions);
+	private boolean localFieldsEqual(Rule other) {
+		return Objects.equals(description, other.description) && Objects.equals(uid, other.uid) && groupFieldsEqual(other);
 	}
 
+	private boolean globalFieldsEqual(Rule other) {
+		return Objects.equals(version, other.version) && Objects.equals(eventType, other.eventType) && globalMutableFieldsEqual(other);
+	}
+
+	private boolean globalMutableFieldsEqual(Rule other) {
+		return Objects.equals(notifyId, other.notifyId) && Objects.equals(entryPhase, other.entryPhase) && Objects.equals(publishPhase, other.publishPhase);
+	}
+
+	private boolean groupFieldsEqual(Rule other) {
+		return Objects.equals(phase, other.phase) && Objects.equals(groupId, other.groupId);
+	}
+
+	@Override
+	public int hashCode(){
+		return Objects.hash(this.version,this.description,this.notifyId,this.eventType,this.uid,this.phase,this.condition,this.actions,this.entryPhase,this.publishPhase,this.groupId);
+	}
+
+
 	public boolean referencesOtherRule(Rule other){
-		return other != this && actions.stream().anyMatch(p -> p.hasDependencies(other.actions)) ||
-				isConditionalRule() && other.actions.stream().map(BaseAction::strippedTarget).anyMatch(t -> condition.referencesTarget(t));
+		return sameGroupId(other) && (actions.stream().anyMatch(p -> p.hasDependencies(other.actions)) ||
+				isConditionalRule() && other.actions.stream().map(BaseAction::strippedTarget).anyMatch(t -> condition.referencesTarget(t)));
+	}
+
+	private boolean sameGroupId(Rule other) {
+		return !equals(other) && Objects.equals(groupId, other.groupId);
 	}
 
 
@@ -121,7 +180,7 @@ public class Rule {
 
 	public List<BaseAction> findDependencies(List<Rule> others) {
 		return others.stream()
-				.filter(r -> r != this)
+				.filter(r -> !equals(r))
 				.map(this::findDependencies)
 				.flatMap(List::stream)
 				.collect(Collectors.toList());
@@ -131,6 +190,7 @@ public class Rule {
 		return allRules.stream().anyMatch(this::referencesOtherRule);
 	}
 
+	@JsonIgnore
 	public boolean isConditionalRule() {
 		return null != condition;
 	}

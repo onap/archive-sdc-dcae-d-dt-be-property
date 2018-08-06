@@ -24,7 +24,7 @@ public class Model {
     private String name;
     @SerializedName("id")
     @Expose
-    private Integer id;
+    private String id;
 
     public String getItemId() {
         return itemId;
@@ -66,11 +66,11 @@ public class Model {
         this.name = name;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

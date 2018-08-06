@@ -2,8 +2,10 @@ package org.onap.sdc.dcae.composition.restmodels.ruleeditor;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.gson.annotations.SerializedName;
 
 public class MapAction extends BaseCopyAction {
@@ -18,6 +20,7 @@ public class MapAction extends BaseCopyAction {
 		this.map = map;
 	}
 
+	@JsonIgnore
 	public List<UIHashMap> getMapValues() {
 		return null == map? null : map.values;
 	}
@@ -26,6 +29,7 @@ public class MapAction extends BaseCopyAction {
 		return null != map && map.haveDefault;
 	}
 
+	@JsonIgnore
 	public String getMapDefaultValue() {
 		return null == map? null : map.defaultValue;
 	}
@@ -61,32 +65,39 @@ public class MapAction extends BaseCopyAction {
 			this.values = values;
 		}
 
-	}
 
-	private class UIHashMap {
-		private String key;
-		private String value;
-
-		public String getKey() {
-			return key;
+		@Override
+		public boolean equals(Object obj) {
+			if (obj == this) {
+				return true;
+			}
+			if (null == obj || getClass() != obj.getClass()) {
+				return false;
+			}
+			Transform other = (Transform) obj;
+			return Objects.equals(defaultValue, other.defaultValue) && Objects.equals(haveDefault, other.haveDefault) && Objects.equals(values, other.values);
 		}
 
-		public void setKey(String key) {
-			this.key = key;
-		}
-
-		public String getValue() {
-			return value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
+		@Override
+		public int hashCode(){
+			return Objects.hash(defaultValue, haveDefault, values);
 		}
 
 	}
 
 	public Map<String, String> transformToMap() {
 		return getMap().getValues().stream().collect(Collectors.toMap(UIHashMap::getKey, UIHashMap::getValue));
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		return super.equals(obj) && Objects.equals(map, ((MapAction) obj).map);
+	}
+
+	@Override
+	public int hashCode(){
+		return Objects.hash(map);
 	}
 
 }
