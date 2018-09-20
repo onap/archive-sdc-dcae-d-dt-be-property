@@ -173,7 +173,6 @@ public class TopoSearchAction extends BaseAction {
 		return null != strippedReference && strippedReference.equals(strippedTarget) || conditionalSearch() && searchFilter().referencesTarget(strippedTarget);
 	}
 
-	//TODO enhance to targets plural
 	@Override
 	public String strippedTarget() {
 		return "";

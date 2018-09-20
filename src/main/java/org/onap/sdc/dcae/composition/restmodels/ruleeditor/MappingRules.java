@@ -16,7 +16,9 @@ public class MappingRules {
 	//US420764 support phases configuration
 	private String entryPhase;
 	private String publishPhase;
-	private Map<String, Rule> rules = new LinkedHashMap<>();
+	//US441901 global filtering
+	private BaseCondition filter;
+	private Rules rules = new Rules();
 
 	public String getEntryPhase() {
 		return entryPhase;
@@ -39,7 +41,7 @@ public class MappingRules {
 	}
 
 	public void setRules(Map<String, Rule> rules) {
-		this.rules = rules;
+		this.rules = new Rules(rules);
 	}
 
 	public String getVersion() {
@@ -66,10 +68,25 @@ public class MappingRules {
 		this.notifyId = notifyId;
 	}
 
+	public BaseCondition getFilter() {
+		return filter;
+	}
+
+	public void setFilter(BaseCondition filter) {
+		this.filter = filter;
+	}
+
+
 	public MappingRules(Rule rule) {
 		version = rule.getVersion();
 		eventType = rule.getEventType();
 		addOrReplaceRule(rule);
+	}
+
+	public MappingRules(ApplyFilterRequest request) {
+		version = request.getVersion();
+		eventType = request.getEventType();
+		filter = request.getFilter();
 	}
 
 	protected MappingRules(){}
@@ -120,11 +137,18 @@ public class MappingRules {
 	}
 
 	private boolean globalTranslationFieldsEqual(MappingRules other) {
-		return Objects.equals(notifyId, other.notifyId) && Objects.equals(entryPhase, other.entryPhase) && Objects.equals(publishPhase, other.publishPhase);
+		return Objects.equals(notifyId, other.notifyId) && Objects.equals(entryPhase, other.entryPhase) && Objects.equals(publishPhase, other.publishPhase) && Objects.equals(filter, other.filter);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(version, notifyId, eventType, rules, entryPhase, publishPhase);
+		return Objects.hash(version, notifyId, eventType, rules, entryPhase, publishPhase, filter);
+	}
+
+	private static class Rules extends LinkedHashMap<String, Rule> {
+		private Rules(){}
+		private Rules(Map<String,Rule> rules) {
+			this.putAll(rules);
+		}
 	}
 }
