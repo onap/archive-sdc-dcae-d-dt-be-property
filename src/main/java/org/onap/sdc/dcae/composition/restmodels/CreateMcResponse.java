@@ -30,4 +30,6 @@ public class CreateMcResponse {
 		this.vfcmt = vfcmt;
 		this.cdump = cdump;
 	}
+
+	CreateMcResponse(){}
 }

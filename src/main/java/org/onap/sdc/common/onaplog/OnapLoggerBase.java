@@ -27,6 +27,8 @@ public abstract class OnapLoggerBase implements IOnapLogger {
         this.myMarker = marker;
     }
 
+    OnapLoggerBase(){}
+
     @Override
     public void log(LogLevel errorLevel, String className, String message, Object... args) {
         MDC.put("ClassName", className);

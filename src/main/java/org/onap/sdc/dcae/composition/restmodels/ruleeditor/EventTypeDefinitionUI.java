@@ -24,27 +24,45 @@ public class EventTypeDefinitionUI {
 				.collect(Collectors.toList());
 	}
 
+	EventTypeDefinitionUI(){}
+
 	public String getName() {
 		return name;
 	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public List<EventTypeDefinitionUI> getChildren() {
 		return children;
 	}
 
+	public void setChildren(List<EventTypeDefinitionUI> children) {
+		this.children = children;
+	}
 
 	public Boolean getIsRequired() {
 		return isRequired;
 	}
 
+	public void setIsRequired(Boolean isRequired) {
+		this.isRequired = isRequired;
+	}
 
 	public List<String> getRequiredChildren() {
 		return requiredChildren;
 	}
 
+	public void setRequiredChildren(List<String> requiredChildren) {
+		this.requiredChildren = requiredChildren;
+	}
 
 	public String getId() {
 		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 }

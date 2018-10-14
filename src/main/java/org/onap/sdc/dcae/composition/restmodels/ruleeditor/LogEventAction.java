@@ -28,6 +28,10 @@ public class LogEventAction extends BaseAction {
 		return logEvent;
 	}
 
+	public void setLogEvent(LogEvent logEvent) {
+		this.logEvent = logEvent;
+	}
+
 	public String logTitle() {
 		return logEvent.title;
 	}

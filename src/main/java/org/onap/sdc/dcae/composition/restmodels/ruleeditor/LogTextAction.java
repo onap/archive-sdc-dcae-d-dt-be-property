@@ -45,6 +45,10 @@ public class LogTextAction extends BaseAction {
 		return logText;
 	}
 
+	public void setLogText(LogText logText) {
+		this.logText = logText;
+	}
+
 	public String logName() {
 		return logText.name;
 	}

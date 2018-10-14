@@ -8,15 +8,6 @@ public class ImportPhaseRequest extends RuleEditorRequest {
 	private String eventType;
 	private MappingRulesResponse payload;
 
-//	public ImportPhaseRequest(String vfcmtUuid, String dcaeCompLabel, String nid, String configParam, String groupId, String phase, String version, String eventType) {
-//		super(vfcmtUuid, dcaeCompLabel, nid, configParam);
-//		this.groupId = groupId;
-//		this.phase = phase;
-//		// validation performed against selected VES version/eventType
-//		this.version = version;
-//		this.eventType = eventType;
-//	}
-
 	public String getGroupId() {
 		return groupId;
 	}

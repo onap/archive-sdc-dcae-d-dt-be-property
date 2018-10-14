@@ -40,6 +40,10 @@ public class ReplaceTextAction extends UnaryFieldAction {
 		return replaceText;
 	}
 
+	public void setReplaceText(ReplaceText replaceText) {
+		this.replaceText = replaceText;
+	}
+
 	public String find() {
 		return replaceText.find;
 	}

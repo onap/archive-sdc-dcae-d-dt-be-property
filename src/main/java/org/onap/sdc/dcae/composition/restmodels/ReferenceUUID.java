@@ -11,6 +11,8 @@ public class ReferenceUUID {
         this.referenceUUID = referenceUUID;
     }
 
+    ReferenceUUID(){}
+
     public String getReferenceUUID() {
         return referenceUUID;
     }
