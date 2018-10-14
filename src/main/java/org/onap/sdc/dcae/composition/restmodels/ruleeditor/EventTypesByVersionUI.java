@@ -10,7 +10,9 @@ public class EventTypesByVersionUI {
 	
 	private String version;
 	private Set<String> eventTypes;
-	
+
+	EventTypesByVersionUI(){}
+
 	public EventTypesByVersionUI(String version, Set<String> eventTypes) {
 		super();
 		this.version = version;
@@ -23,6 +25,14 @@ public class EventTypesByVersionUI {
 	
 	public Set<String> getEventTypes() {
 		return eventTypes;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
+	public void setEventTypes(Set<String> eventTypes) {
+		this.eventTypes = eventTypes;
 	}
 	
 }

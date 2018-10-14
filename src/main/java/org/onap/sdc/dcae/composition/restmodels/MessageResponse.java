@@ -2,7 +2,7 @@ package org.onap.sdc.dcae.composition.restmodels;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class MessageResponse{
+public class MessageResponse {
 
 	@JsonProperty("errorResponse")
 	private String errorResponse;

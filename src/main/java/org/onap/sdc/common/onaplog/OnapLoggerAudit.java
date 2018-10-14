@@ -18,6 +18,8 @@ public class OnapLoggerAudit extends OnapLoggerBase {
         logger = LoggerFactory.getLogger(this.getClass().getName());
    }
 
+   OnapLoggerAudit(){}
+
     public static OnapLoggerAudit getInstance() {
         return instanceLoggerAudit;
     }

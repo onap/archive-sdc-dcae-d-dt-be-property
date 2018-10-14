@@ -11,10 +11,10 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 
 /**
- * Created by dd4296 on 12/13/2017.
  * this is local implementation of the stopwatch class from EELF standard with the same interface
  * can be replaced if needed with EELF lib
  */
+
 public class Stopwatch implements IStopWatch {
 
     private static final Logger log = LoggerFactory.getLogger(Stopwatch.class.getName());

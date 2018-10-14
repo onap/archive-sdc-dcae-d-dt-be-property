@@ -1,10 +1,10 @@
 package org.onap.sdc.dcae.composition.restmodels;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import org.onap.sdc.dcae.composition.restmodels.sdc.ResourceDetailed;
 import org.onap.sdc.dcae.composition.util.DcaeBeConstants;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
+import java.util.Objects;
+
 public class MonitoringComponent {
 
 	// VFCMT metadata
@@ -22,6 +22,11 @@ public class MonitoringComponent {
 	// The name of the vfi monitored by the VFCMT
 	private String vfiName;
 
+	// 1810 US436244 add invariantUuid, submittedUuid to MC data
+	private String invariantUUID;
+	private String submittedUuid;
+
+
 	public MonitoringComponent(ResourceDetailed mc, String vfiName) {
 		this.uuid = mc.getUuid();
 		this.name = mc.getName();
@@ -29,7 +34,12 @@ public class MonitoringComponent {
 		this.lastUpdaterUserId = mc.getLastUpdaterUserId();
 		this.description = mc.getDescription();
 		this.lifecycleState = mc.getLifecycleState();
-		this.status = DcaeBeConstants.LifecycleStateEnum.CERTIFIED == DcaeBeConstants.LifecycleStateEnum.findState(lifecycleState) ? "Submitted" : "Not Submitted";
+		this.invariantUUID = mc.getInvariantUUID();
+		this.status = "Not Submitted";
+		if(DcaeBeConstants.LifecycleStateEnum.CERTIFIED == DcaeBeConstants.LifecycleStateEnum.findState(lifecycleState)) {
+			this.submittedUuid = mc.getUuid();
+			this.status = "Submitted";
+		}
 		this.vfiName = vfiName;
 	}
 
@@ -73,6 +83,16 @@ public class MonitoringComponent {
 		return lifecycleState;
 	}
 
+	public String getSubmittedUuid() { return submittedUuid; }
+
+	public String getInvariantUUID() {
+		return invariantUUID;
+	}
+
+	public void setInvariantUUID(String invariantUUID) {
+		this.invariantUUID = invariantUUID;
+	}
+
 	public void setVfiName(String vfiName) {
 		this.vfiName = vfiName;
 	}
@@ -93,4 +113,51 @@ public class MonitoringComponent {
 		this.lifecycleState = lifecycleState;
 	}
 
+	public void setSubmittedUuid(String submittedUuid) { this.submittedUuid = submittedUuid; }
+
+	public void setStatus(String status) { this.status = status; }
+
+	public void setLastUpdaterUserId(String lastUpdaterUserId) {
+		this.lastUpdaterUserId = lastUpdaterUserId;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == this) {
+			return true;
+		}
+		if (null == obj || getClass() != obj.getClass()) {
+			return false;
+		}
+		MonitoringComponent other = (MonitoringComponent) obj;
+		return Objects.equals(status, other.status) && Objects.equals(vfiName, other.vfiName) && dataFieldsEqual(other);
+
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(uuid, name, version, lastUpdaterUserId, lifecycleState, status, vfiName, invariantUUID, submittedUuid);
+	}
+
+
+	private boolean resourceFieldsEqual(MonitoringComponent other) {
+		return Objects.equals(lastUpdaterUserId, other.lastUpdaterUserId) && Objects.equals(name, other.name) && Objects.equals(description, other.description);
+	}
+
+	private boolean lifecycleFieldsEqual(MonitoringComponent other) {
+		return Objects.equals(uuid, other.uuid) && Objects.equals(version, other.version) && Objects.equals(lifecycleState, other.lifecycleState);
+	}
+
+	private boolean additionalUuidFieldsEqual(MonitoringComponent other) {
+		return Objects.equals(invariantUUID, other.invariantUUID) && Objects.equals(submittedUuid, other.submittedUuid);
+	}
+
+	private boolean dataFieldsEqual(MonitoringComponent other) {
+		return resourceFieldsEqual(other) && lifecycleFieldsEqual(other) && additionalUuidFieldsEqual(other);
+	}
 }

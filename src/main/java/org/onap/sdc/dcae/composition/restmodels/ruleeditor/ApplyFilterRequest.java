@@ -35,4 +35,6 @@ public class ApplyFilterRequest extends TranslateRequest {
 		super(vfcmtUuid, dcaeCompLabel, nid, configParam, notifyId, entryPhase, publishPhase);
 		this.filter = filter;
 	}
+
+	ApplyFilterRequest(){}
 }

@@ -1,13 +1,13 @@
 package org.onap.sdc.dcae.composition.restmodels;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.onap.sdc.dcae.composition.restmodels.sdc.ResourceDetailed;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class VfcmtData extends MonitoringComponent {
 
 	private String flowType;
 	private String serviceUuid;
-
-	private String invariantUUID;
 
 	public VfcmtData(ResourceDetailed vfcmt) {
 		setUuid(vfcmt.getUuid());
@@ -28,6 +28,8 @@ public class VfcmtData extends MonitoringComponent {
 		setServiceUuid(serviceUuid);
 	}
 
+	VfcmtData(){}
+
 	public String getFlowType() {
 		return flowType;
 	}
@@ -43,14 +45,5 @@ public class VfcmtData extends MonitoringComponent {
 	public void setServiceUuid(String serviceUuid) {
 		this.serviceUuid = serviceUuid;
 	}
-
-	public String getInvariantUUID() {
-		return invariantUUID;
-	}
-
-	public void setInvariantUUID(String invariantUUID) {
-		this.invariantUUID = invariantUUID;
-	}
-
 
 }
