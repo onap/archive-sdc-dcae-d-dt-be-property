@@ -16,7 +16,6 @@
         <sonar.sourceEncoding>${project.build.sourceEncoding}</sonar.sourceEncoding>
         <sonar.skipDesign>true</sonar.skipDesign>
         <sonar.projectBaseDir>${project.basedir}</sonar.projectBaseDir>
-        <sonar.sources>.</sonar.sources>
 		<sonar.branch>${project.version}</sonar.branch>
 	</properties>
 	<dependencies>
