@@ -5,11 +5,10 @@ import org.onap.sdc.common.onaplog.Enums.LogMarkers;
 import org.onap.sdc.common.onaplog.Enums.OnapLoggerErrorCode;
 import org.onap.sdc.common.onaplog.interfaces.IOnapMdcWrapper;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.slf4j.MarkerFactory;
 
 import static org.onap.sdc.common.onaplog.interfaces.IOnapLogConfiguration.*;
-
-import org.apache.log4j.MDC;
 
 public class OnapLoggerError extends OnapLoggerBase {
     private static OnapLoggerError instanceLoggerError = OnapLoggerFactory.getLogger(OnapLoggerError.class);
