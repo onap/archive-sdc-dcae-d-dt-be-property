@@ -4,7 +4,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 
 public class DcaeMinimizedServiceTest {
 
@@ -51,6 +50,4 @@ public class DcaeMinimizedServiceTest {
         assertEquals(VERSION + "1", classUnderTest.getVersion());
         assertEquals(INVARIANT_UUID + "1", classUnderTest.getInvariantUUID());
     }
-
-
 }
