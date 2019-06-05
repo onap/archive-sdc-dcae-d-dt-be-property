@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ec226869_f3739d74",
+        "filename": "src/test/java/org/onap/sdc/common/onaplog/OnapLoggerAuditTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5336
+      },
+      "writtenOn": "2019-06-05T14:10:34Z",
+      "side": 1,
+      "message": "It can be made static as well:\nprivate static final String TEST_CLASS_NAME \u003d OnapLoggerAuditTest.class.getName();",
+      "range": {
+        "startLine": 73,
+        "startChar": 25,
+        "endLine": 73,
+        "endChar": 40
+      },
+      "revId": "91a5f8f7e31e0c08ef388d249efcd70eb58133ba",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bcb51ca0_4ad8394f",
+        "filename": "src/test/java/org/onap/sdc/common/onaplog/OnapLoggerAuditTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 5336
+      },
+      "writtenOn": "2019-06-05T14:10:34Z",
+      "side": 1,
+      "message": "Can it be private as well?",
+      "range": {
+        "startLine": 168,
+        "startChar": 4,
+        "endLine": 168,
+        "endChar": 10
+      },
+      "revId": "91a5f8f7e31e0c08ef388d249efcd70eb58133ba",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
