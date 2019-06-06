@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d947bca4_c6123a1e",
+        "filename": "src/test/java/org/onap/sdc/common/onaplog/OnapLoggerGenericTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 3949
+      },
+      "writtenOn": "2019-06-06T13:16:22Z",
+      "side": 1,
+      "message": "Are you planning to use this adapter more in the future? Looks like a bit of an overkill if this remains its only usage",
+      "range": {
+        "startLine": 59,
+        "startChar": 8,
+        "endLine": 59,
+        "endChar": 21
+      },
+      "revId": "bff61e37e0b030309e2d7ef6d253ada72f41ebfd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
