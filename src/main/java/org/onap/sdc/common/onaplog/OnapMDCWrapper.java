@@ -1,7 +1,6 @@
 package org.onap.sdc.common.onaplog;
 
 import org.onap.sdc.common.onaplog.Enums.Severity;
-import org.onap.sdc.common.onaplog.interfaces.IOnapLogConfiguration;
 import org.onap.sdc.common.onaplog.interfaces.IOnapMdcWrapper;
 import org.onap.sdc.common.onaplog.interfaces.IStopWatch;
 import org.slf4j.Logger;
@@ -60,141 +59,141 @@ public class OnapMDCWrapper implements IOnapMdcWrapper {
 
     @Override
     public OnapMDCWrapper setClassName(String className) {
-        MDC.put(IOnapLogConfiguration.MDC_CLASS_NAME, className);
+        MDC.put(OnapLogConfiguration.MDC_CLASS_NAME, className);
         return this;
     }
 
     // automatic parameter this is optional
     @Override
     public OnapMDCWrapper setAutoServerFQDN(String serverFQDN) {
-        MDC.put(IOnapLogConfiguration.MDC_SERVER_FQDN, serverFQDN);
+        MDC.put(OnapLogConfiguration.MDC_SERVER_FQDN, serverFQDN);
         return this;
     }
 
     // automatic parameter this is optional
     @Override
     public OnapMDCWrapper setAutoServerIPAddress(String serverIPAddress) {
-        MDC.put(IOnapLogConfiguration.MDC_SERVER_IP_ADDRESS, serverIPAddress);
+        MDC.put(OnapLogConfiguration.MDC_SERVER_IP_ADDRESS, serverIPAddress);
         return this;
     }
 
     @Override
     public OnapMDCWrapper setInstanceUUID(String instanceUUID) {
-        MDC.put(IOnapLogConfiguration.MDC_INSTANCE_UUID, instanceUUID);
+        MDC.put(OnapLogConfiguration.MDC_INSTANCE_UUID, instanceUUID);
         return this;
     }
 
     @Override
     public OnapMDCWrapper setProcessKey(String processKey) {
-        MDC.put(IOnapLogConfiguration.MDC_PROCESS_KEY, processKey);
+        MDC.put(OnapLogConfiguration.MDC_PROCESS_KEY, processKey);
         return this;
     }
 
     @Override
     public OnapMDCWrapper setAlertSeverity(Severity alertSeverity) {
-        MDC.put(IOnapLogConfiguration.MDC_ALERT_SEVERITY, String.valueOf(alertSeverity.getSeverityType()));
+        MDC.put(OnapLogConfiguration.MDC_ALERT_SEVERITY, String.valueOf(alertSeverity.getSeverityType()));
         return this;
     }
 
     @Override
     public OnapMDCWrapper setOptCustomField1(String customField1) {
-        MDC.put(IOnapLogConfiguration.MDC_OPT_FIELD1, customField1);
+        MDC.put(OnapLogConfiguration.MDC_OPT_FIELD1, customField1);
         return this;
     }
 
     @Override
     public OnapMDCWrapper setOptCustomField2(String customField2) {
-        MDC.put(IOnapLogConfiguration.MDC_OPT_FIELD2, customField2);
+        MDC.put(OnapLogConfiguration.MDC_OPT_FIELD2, customField2);
         return this;
     }
 
     @Override
     public OnapMDCWrapper setOptCustomField3(String customField3) {
-        MDC.put(IOnapLogConfiguration.MDC_OPT_FIELD3, customField3);
+        MDC.put(OnapLogConfiguration.MDC_OPT_FIELD3, customField3);
         return this;
     }
 
     @Override
     public OnapMDCWrapper setOptCustomField4(String customField4) {
-        MDC.put(IOnapLogConfiguration.MDC_OPT_FIELD4, customField4);
+        MDC.put(OnapLogConfiguration.MDC_OPT_FIELD4, customField4);
         return this;
     }
 
     @Override
     public OnapMDCWrapper setKeyRequestId(String keyRequestId) {
-        MDC.put(IOnapLogConfiguration.MDC_KEY_REQUEST_ID, keyRequestId); // eg. servletRequest.getSession().getId()
+        MDC.put(OnapLogConfiguration.MDC_KEY_REQUEST_ID, keyRequestId); // eg. servletRequest.getSession().getId()
         return this;
     }
 
     @Override
     public OnapMDCWrapper setRemoteHost(String remoteHost) {
-        MDC.put(IOnapLogConfiguration.MDC_REMOTE_HOST, remoteHost);
+        MDC.put(OnapLogConfiguration.MDC_REMOTE_HOST, remoteHost);
         return this;
     }
 
     @Override
     public OnapMDCWrapper setServiceName(String serviceName) {
-        MDC.put(IOnapLogConfiguration.MDC_SERVICE_NAME, serviceName);
+        MDC.put(OnapLogConfiguration.MDC_SERVICE_NAME, serviceName);
         return this;
     }
 
     @Override
     public OnapMDCWrapper setStatusCode(String statusCode) {
-        MDC.put(IOnapLogConfiguration.MDC_STATUS_CODE, statusCode);
+        MDC.put(OnapLogConfiguration.MDC_STATUS_CODE, statusCode);
         return this;
     }
 
     @Override
     public OnapMDCWrapper setPartnerName(String partnerName) {
-        MDC.put(IOnapLogConfiguration.MDC_PARTNER_NAME, partnerName);
+        MDC.put(OnapLogConfiguration.MDC_PARTNER_NAME, partnerName);
         return this;
     }
 
     @Override
     public OnapMDCWrapper setResponseCode(int responseCode) {
-        MDC.put(IOnapLogConfiguration.MDC_RESPONSE_CODE, Integer.toString(responseCode));
+        MDC.put(OnapLogConfiguration.MDC_RESPONSE_CODE, Integer.toString(responseCode));
         return this;
     }
 
     @Override
     public OnapMDCWrapper setResponseDesc(String responseDesc) {
-        MDC.put(IOnapLogConfiguration.MDC_RESPONSE_DESC, responseDesc);
+        MDC.put(OnapLogConfiguration.MDC_RESPONSE_DESC, responseDesc);
         return this;
     }
 
     @Override
     public OnapMDCWrapper setServiceInstanceId(String serviceInstanceId) {
-        MDC.put(IOnapLogConfiguration.MDC_SERVICE_INSTANCE_ID, serviceInstanceId);
+        MDC.put(OnapLogConfiguration.MDC_SERVICE_INSTANCE_ID, serviceInstanceId);
         return this;
     }
 
     @Override
     public OnapMDCWrapper setTargetEntity(String targetEntity) {
-        MDC.put(IOnapLogConfiguration.MDC_TARGET_ENTITY, targetEntity);
+        MDC.put(OnapLogConfiguration.MDC_TARGET_ENTITY, targetEntity);
         return this;
     }
 
     @Override
     public OnapMDCWrapper setTargetServiceName(String targetServiceName) {
-        MDC.put(IOnapLogConfiguration.MDC_TARGET_SERVICE_NAME, targetServiceName);
+        MDC.put(OnapLogConfiguration.MDC_TARGET_SERVICE_NAME, targetServiceName);
         return this;
     }
 
     @Override
     public OnapMDCWrapper setTargetVirtualEntity(String targetVirtualEntity) {
-        MDC.put(IOnapLogConfiguration.MDC_TARGET_VIRTUAL_ENTITY, targetVirtualEntity);
+        MDC.put(OnapLogConfiguration.MDC_TARGET_VIRTUAL_ENTITY, targetVirtualEntity);
         return this;
     }
 
     @Override
     public OnapMDCWrapper setErrorCode(int errorCode) {
-        MDC.put(IOnapLogConfiguration.MDC_ERROR_CODE, Integer.toString(errorCode));
+        MDC.put(OnapLogConfiguration.MDC_ERROR_CODE, Integer.toString(errorCode));
         return this;
     }
 
     @Override
     public OnapMDCWrapper setErrorDescription(String errorDescription) {
-        MDC.put(IOnapLogConfiguration.MDC_ERROR_DESC, errorDescription);
+        MDC.put(OnapLogConfiguration.MDC_ERROR_DESC, errorDescription);
         return this;
     }
 

@@ -1,6 +1,5 @@
 package org.onap.sdc.common.onaplog;
 
-import org.onap.sdc.common.onaplog.interfaces.IOnapLogConfiguration;
 import org.onap.sdc.common.onaplog.interfaces.IStopWatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,16 +22,16 @@ public class Stopwatch implements IStopWatch {
     }
 
     public void start() {
-        if (MDC.get(IOnapLogConfiguration.MDC_BEGIN_TIMESTAMP) == null || MDC.get(IOnapLogConfiguration.MDC_BEGIN_TIMESTAMP).trim().length() == 0) {
-            MDC.put(IOnapLogConfiguration.MDC_BEGIN_TIMESTAMP, generatedTimeNow());
+        if (MDC.get(OnapLogConfiguration.MDC_BEGIN_TIMESTAMP) == null || MDC.get(OnapLogConfiguration.MDC_BEGIN_TIMESTAMP).trim().length() == 0) {
+            MDC.put(OnapLogConfiguration.MDC_BEGIN_TIMESTAMP, generatedTimeNow());
         }
     }
 
     public void stop() {
-        if (MDC.get(IOnapLogConfiguration.MDC_BEGIN_TIMESTAMP) == null) {
+        if (MDC.get(OnapLogConfiguration.MDC_BEGIN_TIMESTAMP) == null) {
             log.error("call to stop without calling start first, this is not compliant with EELF format");
         }
-        MDC.put(IOnapLogConfiguration.MDC_END_TIMESTAMP, generatedTimeNow());
+        MDC.put(OnapLogConfiguration.MDC_END_TIMESTAMP, generatedTimeNow());
         setElapsedTime();
     }
 
@@ -40,12 +39,12 @@ public class Stopwatch implements IStopWatch {
 
         try {
 
-            final LocalDateTime startTime = LocalDateTime.parse(MDC.get(IOnapLogConfiguration.MDC_BEGIN_TIMESTAMP));
-            final LocalDateTime endTime = LocalDateTime.parse(MDC.get(IOnapLogConfiguration.MDC_END_TIMESTAMP));
+            final LocalDateTime startTime = LocalDateTime.parse(MDC.get(OnapLogConfiguration.MDC_BEGIN_TIMESTAMP));
+            final LocalDateTime endTime = LocalDateTime.parse(MDC.get(OnapLogConfiguration.MDC_END_TIMESTAMP));
 
             final Duration timeDifference = Duration.between(startTime, endTime);
 
-            MDC.put(IOnapLogConfiguration.MDC_ELAPSED_TIME, String.valueOf(timeDifference.toMillis()));
+            MDC.put(OnapLogConfiguration.MDC_ELAPSED_TIME, String.valueOf(timeDifference.toMillis()));
 
         } catch(Exception ex) {
             log.error("failed to calculate elapsed time",ex);

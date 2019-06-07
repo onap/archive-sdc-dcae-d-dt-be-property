@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.slf4j.MarkerFactory;
 import org.slf4j.MDC;
 
-import static org.onap.sdc.common.onaplog.interfaces.IOnapLogConfiguration.*;
+import static org.onap.sdc.common.onaplog.OnapLogConfiguration.*;
 
 public class OnapLoggerError extends OnapLoggerBase {
     private static OnapLoggerError instanceLoggerError = OnapLoggerFactory.getLogger(OnapLoggerError.class);
