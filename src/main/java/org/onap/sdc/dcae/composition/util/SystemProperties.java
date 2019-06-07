@@ -3,8 +3,7 @@ package org.onap.sdc.dcae.composition.util;
 import java.util.Properties;
 
 import org.onap.sdc.common.onaplog.OnapLoggerDebug;
-import org.onap.sdc.common.onaplog.OnapLoggerError;
-import org.onap.sdc.common.onaplog.Enums.LogLevel;
+import org.onap.sdc.common.onaplog.enums.LogLevel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;

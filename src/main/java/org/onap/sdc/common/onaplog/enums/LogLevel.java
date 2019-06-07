@@ -1,4 +1,4 @@
-package org.onap.sdc.common.onaplog.Enums;
+package org.onap.sdc.common.onaplog.enums;
 
 public enum LogLevel {
     INFO,

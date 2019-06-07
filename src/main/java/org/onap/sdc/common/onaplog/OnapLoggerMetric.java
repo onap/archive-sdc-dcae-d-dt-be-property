@@ -1,7 +1,7 @@
 package org.onap.sdc.common.onaplog;
 
-import org.onap.sdc.common.onaplog.Enums.LogMarkers;
-import org.onap.sdc.common.onaplog.Enums.Severity;
+import org.onap.sdc.common.onaplog.enums.LogMarkers;
+import org.onap.sdc.common.onaplog.enums.Severity;
 import org.onap.sdc.common.onaplog.interfaces.IOnapLogConfiguration;
 import org.onap.sdc.common.onaplog.interfaces.IOnapMdcWrapper;
 import org.slf4j.LoggerFactory;

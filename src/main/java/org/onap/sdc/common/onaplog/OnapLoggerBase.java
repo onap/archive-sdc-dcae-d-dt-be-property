@@ -1,6 +1,6 @@
 package org.onap.sdc.common.onaplog;
 
-import org.onap.sdc.common.onaplog.Enums.LogLevel;
+import org.onap.sdc.common.onaplog.enums.LogLevel;
 import org.onap.sdc.common.onaplog.interfaces.IOnapLogConfiguration;
 import org.onap.sdc.common.onaplog.interfaces.IOnapLogger;
 import org.onap.sdc.common.onaplog.interfaces.IOnapMdcWrapper;
