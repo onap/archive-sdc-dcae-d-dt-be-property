@@ -4,11 +4,13 @@ public enum StatusCode {
     ERROR("ERROR"),
     COMPLETE("COMPLETE");
 
-    String statusCode;
+    private String text;
 
-    StatusCode(String statusCode){this.statusCode = statusCode;}
+    StatusCode(String text) {
+        this.text = text;
+    }
 
-    public String getStatusCodeEnum(){
-        return statusCode;
+    public String getText() {
+        return text;
     }
 }

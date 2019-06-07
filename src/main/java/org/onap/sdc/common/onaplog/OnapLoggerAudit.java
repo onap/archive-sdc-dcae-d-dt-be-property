@@ -106,7 +106,8 @@ public class OnapLoggerAudit extends OnapLoggerBase {
 
     public OnapLoggerAudit setStatusCode(String statusCode) {
         // status code is either success (COMPLETE) or failure (ERROR) of the request.
-        String respStatus = Integer.parseInt(statusCode) / 100 == 2 ? StatusCode.COMPLETE.getStatusCodeEnum() : StatusCode.ERROR.getStatusCodeEnum();
+        String respStatus = Integer.parseInt(statusCode) / 100 == 2 ?
+                StatusCode.COMPLETE.getText() : StatusCode.ERROR.getText();
         onapMDCWrapper.setStatusCode(respStatus);
         return this;
     }
