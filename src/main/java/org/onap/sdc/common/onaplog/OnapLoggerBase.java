@@ -1,7 +1,6 @@
 package org.onap.sdc.common.onaplog;
 
 import org.onap.sdc.common.onaplog.Enums.LogLevel;
-import org.onap.sdc.common.onaplog.interfaces.IOnapLogConfiguration;
 import org.onap.sdc.common.onaplog.interfaces.IOnapLogger;
 import org.onap.sdc.common.onaplog.interfaces.IOnapMdcWrapper;
 import org.slf4j.Logger;
@@ -33,8 +32,8 @@ public abstract class OnapLoggerBase implements IOnapLogger {
     public void log(LogLevel errorLevel, String className, String message, Object... args) {
         MDC.put("ClassName", className);
         if (this instanceof OnapLoggerAudit || this instanceof OnapLoggerMetric) {
-            MDC.put(IOnapLogConfiguration.MDC_SERVER_IP_ADDRESS, OnapMDCWrapper.getInstance().getHostAddress());
-            MDC.put(IOnapLogConfiguration.MDC_SERVER_FQDN, OnapMDCWrapper.getInstance().getFqdn());
+            MDC.put(OnapLogConfiguration.MDC_SERVER_IP_ADDRESS, OnapMDCWrapper.getInstance().getHostAddress());
+            MDC.put(OnapLogConfiguration.MDC_SERVER_FQDN, OnapMDCWrapper.getInstance().getFqdn());
         }
 
         onapMDCWrapper.validateMandatoryFields();

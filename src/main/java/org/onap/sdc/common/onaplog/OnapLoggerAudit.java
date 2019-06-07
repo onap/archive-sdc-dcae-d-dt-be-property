@@ -4,7 +4,6 @@ import org.onap.sdc.common.onaplog.Enums.LogMarkers;
 import org.onap.sdc.common.onaplog.Enums.OnapLoggerErrorCode;
 import org.onap.sdc.common.onaplog.Enums.Severity;
 import org.onap.sdc.common.onaplog.Enums.StatusCode;
-import org.onap.sdc.common.onaplog.interfaces.IOnapLogConfiguration;
 import org.onap.sdc.common.onaplog.interfaces.IOnapMdcWrapper;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
@@ -139,28 +138,28 @@ public class OnapLoggerAudit extends OnapLoggerBase {
     @Override
     public void initializeMandatoryFields() {
 
-        onapMDCWrapper.setMandatoryField(IOnapLogConfiguration.MDC_BEGIN_TIMESTAMP);
-        onapMDCWrapper.setMandatoryField(IOnapLogConfiguration.MDC_END_TIMESTAMP);
-        onapMDCWrapper.setMandatoryField(IOnapLogConfiguration.MDC_KEY_REQUEST_ID);
-        onapMDCWrapper.setMandatoryField(IOnapLogConfiguration.MDC_SERVICE_NAME);
-        onapMDCWrapper.setMandatoryField(IOnapLogConfiguration.MDC_PARTNER_NAME);
-        onapMDCWrapper.setMandatoryField(IOnapLogConfiguration.MDC_STATUS_CODE);
-        onapMDCWrapper.setMandatoryField(IOnapLogConfiguration.MDC_RESPONSE_CODE);
-        onapMDCWrapper.setMandatoryField(IOnapLogConfiguration.MDC_RESPONSE_DESC);
-        onapMDCWrapper.setMandatoryField(IOnapLogConfiguration.MDC_ELAPSED_TIME);
+        onapMDCWrapper.setMandatoryField(OnapLogConfiguration.MDC_BEGIN_TIMESTAMP);
+        onapMDCWrapper.setMandatoryField(OnapLogConfiguration.MDC_END_TIMESTAMP);
+        onapMDCWrapper.setMandatoryField(OnapLogConfiguration.MDC_KEY_REQUEST_ID);
+        onapMDCWrapper.setMandatoryField(OnapLogConfiguration.MDC_SERVICE_NAME);
+        onapMDCWrapper.setMandatoryField(OnapLogConfiguration.MDC_PARTNER_NAME);
+        onapMDCWrapper.setMandatoryField(OnapLogConfiguration.MDC_STATUS_CODE);
+        onapMDCWrapper.setMandatoryField(OnapLogConfiguration.MDC_RESPONSE_CODE);
+        onapMDCWrapper.setMandatoryField(OnapLogConfiguration.MDC_RESPONSE_DESC);
+        onapMDCWrapper.setMandatoryField(OnapLogConfiguration.MDC_ELAPSED_TIME);
 
         //Theoretically Optional, but practically Mandatory
-        onapMDCWrapper.setMandatoryField(IOnapLogConfiguration.MDC_SERVER_IP_ADDRESS);
-        onapMDCWrapper.setMandatoryField(IOnapLogConfiguration.MDC_SERVER_FQDN);
+        onapMDCWrapper.setMandatoryField(OnapLogConfiguration.MDC_SERVER_IP_ADDRESS);
+        onapMDCWrapper.setMandatoryField(OnapLogConfiguration.MDC_SERVER_FQDN);
 
-        onapMDCWrapper.setOptionalField(IOnapLogConfiguration.MDC_INSTANCE_UUID);
-        onapMDCWrapper.setOptionalField(IOnapLogConfiguration.MDC_ALERT_SEVERITY);
-        onapMDCWrapper.setOptionalField(IOnapLogConfiguration.MDC_REMOTE_HOST);
-        onapMDCWrapper.setOptionalField(IOnapLogConfiguration.MDC_CLASS_NAME);
-        onapMDCWrapper.setOptionalField(IOnapLogConfiguration.MDC_PROCESS_KEY);
-        onapMDCWrapper.setOptionalField(IOnapLogConfiguration.MDC_OPT_FIELD1);
-        onapMDCWrapper.setOptionalField(IOnapLogConfiguration.MDC_OPT_FIELD2);
-        onapMDCWrapper.setOptionalField(IOnapLogConfiguration.MDC_OPT_FIELD3);
-        onapMDCWrapper.setOptionalField(IOnapLogConfiguration.MDC_OPT_FIELD4);
+        onapMDCWrapper.setOptionalField(OnapLogConfiguration.MDC_INSTANCE_UUID);
+        onapMDCWrapper.setOptionalField(OnapLogConfiguration.MDC_ALERT_SEVERITY);
+        onapMDCWrapper.setOptionalField(OnapLogConfiguration.MDC_REMOTE_HOST);
+        onapMDCWrapper.setOptionalField(OnapLogConfiguration.MDC_CLASS_NAME);
+        onapMDCWrapper.setOptionalField(OnapLogConfiguration.MDC_PROCESS_KEY);
+        onapMDCWrapper.setOptionalField(OnapLogConfiguration.MDC_OPT_FIELD1);
+        onapMDCWrapper.setOptionalField(OnapLogConfiguration.MDC_OPT_FIELD2);
+        onapMDCWrapper.setOptionalField(OnapLogConfiguration.MDC_OPT_FIELD3);
+        onapMDCWrapper.setOptionalField(OnapLogConfiguration.MDC_OPT_FIELD4);
     }
 }
