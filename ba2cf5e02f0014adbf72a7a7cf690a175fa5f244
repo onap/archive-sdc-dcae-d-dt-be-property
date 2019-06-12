@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c6a4d085_2a289989",
+        "filename": "src/test/java/org/onap/sdc/dcae/composition/restmodels/ruleeditor/BaseCopyActionTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5336
+      },
+      "writtenOn": "2019-06-12T08:36:02Z",
+      "side": 1,
+      "message": "Assertion arguments should be passed in the correct order.\nThe first arg is expected, the second - actual. \nSonarLint complains about it - three times in this file.",
+      "range": {
+        "startLine": 74,
+        "startChar": 8,
+        "endLine": 74,
+        "endChar": 20
+      },
+      "revId": "ba2cf5e02f0014adbf72a7a7cf690a175fa5f244",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
