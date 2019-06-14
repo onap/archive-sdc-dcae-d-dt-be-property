@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f1d3f952_e82eb089",
+        "filename": "src/test/java/org/onap/sdc/dcae/composition/restmodels/ruleeditor/BaseCopyActionTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5335
+      },
+      "writtenOn": "2019-06-14T13:31:01Z",
+      "side": 1,
+      "message": "Does not meet the requirements of ONAP checkstyle, I think.\nMaybe better will to import each static method separately,  e.g import org.junit.Assert.assertThat e.t.c.",
+      "revId": "c13c9dd3e79565a7c909f76a48fe3d02388cef43",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
