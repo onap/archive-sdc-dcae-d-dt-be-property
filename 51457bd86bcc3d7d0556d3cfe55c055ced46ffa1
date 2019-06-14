@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "73c0d4e3_ad5234c8",
+        "filename": "src/test/java/org/onap/sdc/dcae/composition/restmodels/ruleeditor/StringTransformActionTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 3949
+      },
+      "writtenOn": "2019-06-14T15:50:06Z",
+      "side": 1,
+      "message": "These files with tabs could use auto-reformatting with ONAP java style? I assume you\u0027re aware of https://wiki.onap.org/display/DW/Java+code+style ?",
+      "revId": "51457bd86bcc3d7d0556d3cfe55c055ced46ffa1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
