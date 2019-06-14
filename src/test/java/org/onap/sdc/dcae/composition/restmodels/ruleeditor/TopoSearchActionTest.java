@@ -31,19 +31,17 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 
+@RunWith(MockitoJUnitRunner.class)
 public class TopoSearchActionTest {
-
-	private static Gson gson = new GsonBuilder()
-			.registerTypeAdapter(BaseAction.class, new ActionDeserializer())
-			.registerTypeAdapter(BaseCondition.class, new ConditionDeserializer()).create();
 
 	private static final String ACTION_TYPE = "Test Topology Search";
 	private static final String ID = "123";
@@ -66,6 +64,11 @@ public class TopoSearchActionTest {
 	private static final String UI_HASH_MAP_VALUE2 = "test2";
 
 	private static final String BAD_STRIPPED_TARGET = "badTarget";
+
+	@Mock
+	BaseAction baseAction;
+	@Mock
+	BaseAction baseActionWithBadTarget;
 
 	@Test
 	public void shouldHaveValidGettersAndSetters() {
@@ -130,8 +133,8 @@ public class TopoSearchActionTest {
 	public void checkReferencesTargetTest() {
 		TopoSearchAction topoSearchAction = buildBaseConditionalTopoSearchAction();
 
-		BaseAction baseAction = new TestBaseAction(SEARCH_STRING);
-		BaseAction baseActionWithBadTarget = new TestBaseAction(BAD_STRIPPED_TARGET);
+		Mockito.when(baseAction.strippedTarget()).thenReturn(SEARCH_STRING);
+		Mockito.when(baseActionWithBadTarget.strippedTarget()).thenReturn(BAD_STRIPPED_TARGET);
 
 		assertTrue(topoSearchAction.referencesTarget(baseAction));
 		assertFalse(topoSearchAction.referencesTarget(baseActionWithBadTarget));
@@ -148,36 +151,13 @@ public class TopoSearchActionTest {
 				"operator:" + SEARCH_FILTER_OPERATOR + "}," +
 				"enrich:{fields:" + ENRICH_FIELDS_ARRAY + "," +
 				"prefix:" + ENRICH_PREFIX + "}}}";
-		return buildTopoSearchAction(topoSearch);
+		return ActionBuilder.buildAction(topoSearch, TopoSearchAction.class);
 	}
 
 	private TopoSearchAction buildConditionalTopoSearchActionWithUpdates() {
 		String topoSearch = "{search:{updates: [{key:" + UI_HASH_MAP_KEY1 + ", value:" + UI_HASH_MAP_VALUE1 + "}," +
 				"{key:" + UI_HASH_MAP_KEY2 + ", value:" + UI_HASH_MAP_VALUE2 + "}]}}";
 
-		return buildTopoSearchAction(topoSearch);
-	}
-
-	private TopoSearchAction buildTopoSearchAction(String topoSearch) {
-		return gson.fromJson(topoSearch, TopoSearchAction.class);
-	}
-
-	private class TestBaseAction extends BaseAction {
-
-		private String strippedTarget;
-
-		TestBaseAction(String strippedTarget) {
-			this.strippedTarget = strippedTarget;
-		}
-
-		@Override
-		public boolean referencesTarget(BaseAction other) {
-			return false;
-		}
-
-		@Override
-		public String strippedTarget() {
-			return strippedTarget;
-		}
+		return ActionBuilder.buildAction(topoSearch, TopoSearchAction.class);
 	}
 }
