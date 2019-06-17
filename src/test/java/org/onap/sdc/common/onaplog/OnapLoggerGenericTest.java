@@ -26,7 +26,6 @@ import static org.junit.Assert.assertNull;
 
 import com.google.common.collect.ImmutableList;
 import org.junit.Test;
-import org.onap.sdc.common.onaplog.interfaces.IOnapLogConfiguration;
 import org.slf4j.MDC;
 import uk.org.lidalia.slf4jtest.LoggingEvent;
 
@@ -47,9 +46,9 @@ public class OnapLoggerGenericTest {
         stopwatch.stop();
 
         // then
-        assertNotNull(MDC.get(IOnapLogConfiguration.MDC_BEGIN_TIMESTAMP));
-        assertNotNull(MDC.get(IOnapLogConfiguration.MDC_END_TIMESTAMP));
-        assertNotNull(MDC.get(IOnapLogConfiguration.MDC_ELAPSED_TIME));
+        assertNotNull(MDC.get(OnapLogConfiguration.MDC_BEGIN_TIMESTAMP));
+        assertNotNull(MDC.get(OnapLogConfiguration.MDC_END_TIMESTAMP));
+        assertNotNull(MDC.get(OnapLogConfiguration.MDC_ELAPSED_TIME));
     }
 
     @Test

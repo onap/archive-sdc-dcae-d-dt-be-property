@@ -42,7 +42,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 import org.onap.sdc.common.onaplog.Enums.LogLevel;
 import org.onap.sdc.common.onaplog.Enums.OnapLoggerErrorCode;
 import org.onap.sdc.common.onaplog.Enums.Severity;
-import org.onap.sdc.common.onaplog.interfaces.IOnapLogConfiguration;
 import org.slf4j.MDC;
 
 import uk.org.lidalia.slf4jtest.LoggingEvent;
@@ -147,22 +146,22 @@ public class OnapLoggerAuditTest {
     }
 
     private void validateMDC() {
-        assertEquals(SERVER_FQDN, MDC.get(IOnapLogConfiguration.MDC_SERVER_FQDN));
-        assertEquals(AUTO_SERVER_IP_ADDRESS, MDC.get(IOnapLogConfiguration.MDC_SERVER_IP_ADDRESS));
-        assertEquals(INSTANCE_UUID, MDC.get(IOnapLogConfiguration.MDC_INSTANCE_UUID));
-        assertEquals(TEST_CLASS_NAME, MDC.get(IOnapLogConfiguration.MDC_CLASS_NAME));
-        assertEquals(PROCESS_KEY, MDC.get(IOnapLogConfiguration.MDC_PROCESS_KEY));
-        assertEquals(String.valueOf(ALERT_SEVERITY), MDC.get(IOnapLogConfiguration.MDC_ALERT_SEVERITY));
-        assertEquals(CUSTOM_FIELD1, MDC.get(IOnapLogConfiguration.MDC_OPT_FIELD1));
-        assertEquals(CUSTOM_FIELD2, MDC.get(IOnapLogConfiguration.MDC_OPT_FIELD2));
-        assertEquals(CUSTOM_FIELD3, MDC.get(IOnapLogConfiguration.MDC_OPT_FIELD3));
-        assertEquals(CUSTOM_FIELD4, MDC.get(IOnapLogConfiguration.MDC_OPT_FIELD4));
-        assertEquals(REMOTE_HOST, MDC.get(IOnapLogConfiguration.MDC_REMOTE_HOST));
-        assertEquals(SERVICE_NAME, MDC.get(IOnapLogConfiguration.MDC_SERVICE_NAME));
-        assertEquals(PARENT_NAME, MDC.get(IOnapLogConfiguration.MDC_PARTNER_NAME));
-        assertEquals(String.valueOf(RESPONSE_CODE), MDC.get(IOnapLogConfiguration.MDC_RESPONSE_CODE));
-        assertEquals(SERVICE_INSTANCE_ID, MDC.get(IOnapLogConfiguration.MDC_SERVICE_INSTANCE_ID));
-        assertEquals(KEY_REQUEST_ID, MDC.get(IOnapLogConfiguration.MDC_KEY_REQUEST_ID));
+        assertEquals(SERVER_FQDN, MDC.get(OnapLogConfiguration.MDC_SERVER_FQDN));
+        assertEquals(AUTO_SERVER_IP_ADDRESS, MDC.get(OnapLogConfiguration.MDC_SERVER_IP_ADDRESS));
+        assertEquals(INSTANCE_UUID, MDC.get(OnapLogConfiguration.MDC_INSTANCE_UUID));
+        assertEquals(TEST_CLASS_NAME, MDC.get(OnapLogConfiguration.MDC_CLASS_NAME));
+        assertEquals(PROCESS_KEY, MDC.get(OnapLogConfiguration.MDC_PROCESS_KEY));
+        assertEquals(String.valueOf(ALERT_SEVERITY), MDC.get(OnapLogConfiguration.MDC_ALERT_SEVERITY));
+        assertEquals(CUSTOM_FIELD1, MDC.get(OnapLogConfiguration.MDC_OPT_FIELD1));
+        assertEquals(CUSTOM_FIELD2, MDC.get(OnapLogConfiguration.MDC_OPT_FIELD2));
+        assertEquals(CUSTOM_FIELD3, MDC.get(OnapLogConfiguration.MDC_OPT_FIELD3));
+        assertEquals(CUSTOM_FIELD4, MDC.get(OnapLogConfiguration.MDC_OPT_FIELD4));
+        assertEquals(REMOTE_HOST, MDC.get(OnapLogConfiguration.MDC_REMOTE_HOST));
+        assertEquals(SERVICE_NAME, MDC.get(OnapLogConfiguration.MDC_SERVICE_NAME));
+        assertEquals(PARENT_NAME, MDC.get(OnapLogConfiguration.MDC_PARTNER_NAME));
+        assertEquals(String.valueOf(RESPONSE_CODE), MDC.get(OnapLogConfiguration.MDC_RESPONSE_CODE));
+        assertEquals(SERVICE_INSTANCE_ID, MDC.get(OnapLogConfiguration.MDC_SERVICE_INSTANCE_ID));
+        assertEquals(KEY_REQUEST_ID, MDC.get(OnapLogConfiguration.MDC_KEY_REQUEST_ID));
     }
 
     private void validateAuditLog(LogLevel logLevel, LoggingEvent log) {
@@ -171,25 +170,25 @@ public class OnapLoggerAuditTest {
         assertNotNull(log.getTimestamp());
 
         ImmutableMap<String, String> mdc = log.getMdc();
-        assertNotEquals(SERVER_FQDN, mdc.get(IOnapLogConfiguration.MDC_SERVER_FQDN));
-        assertNotEquals(AUTO_SERVER_IP_ADDRESS, mdc.get(IOnapLogConfiguration.MDC_SERVER_IP_ADDRESS));
+        assertNotEquals(SERVER_FQDN, mdc.get(OnapLogConfiguration.MDC_SERVER_FQDN));
+        assertNotEquals(AUTO_SERVER_IP_ADDRESS, mdc.get(OnapLogConfiguration.MDC_SERVER_IP_ADDRESS));
 
-        assertEquals(INSTANCE_UUID, mdc.get(IOnapLogConfiguration.MDC_INSTANCE_UUID));
-        assertEquals(TEST_CLASS_NAME, mdc.get(IOnapLogConfiguration.MDC_CLASS_NAME));
-        assertEquals(PROCESS_KEY, mdc.get(IOnapLogConfiguration.MDC_PROCESS_KEY));
-        assertEquals(String.valueOf(ALERT_SEVERITY), mdc.get(IOnapLogConfiguration.MDC_ALERT_SEVERITY));
-        assertEquals(CUSTOM_FIELD1, mdc.get(IOnapLogConfiguration.MDC_OPT_FIELD1));
-        assertEquals(CUSTOM_FIELD2, mdc.get(IOnapLogConfiguration.MDC_OPT_FIELD2));
-        assertEquals(CUSTOM_FIELD3, mdc.get(IOnapLogConfiguration.MDC_OPT_FIELD3));
-        assertEquals(CUSTOM_FIELD4, mdc.get(IOnapLogConfiguration.MDC_OPT_FIELD4));
-        assertEquals(REMOTE_HOST, mdc.get(IOnapLogConfiguration.MDC_REMOTE_HOST));
-        assertEquals(SERVICE_NAME, mdc.get(IOnapLogConfiguration.MDC_SERVICE_NAME));
-        assertEquals(PARENT_NAME, mdc.get(IOnapLogConfiguration.MDC_PARTNER_NAME));
-        assertEquals(String.valueOf(RESPONSE_CODE), mdc.get(IOnapLogConfiguration.MDC_RESPONSE_CODE));
-        assertEquals(SERVICE_INSTANCE_ID, mdc.get(IOnapLogConfiguration.MDC_SERVICE_INSTANCE_ID));
-        assertEquals(KEY_REQUEST_ID, mdc.get(IOnapLogConfiguration.MDC_KEY_REQUEST_ID));
+        assertEquals(INSTANCE_UUID, mdc.get(OnapLogConfiguration.MDC_INSTANCE_UUID));
+        assertEquals(TEST_CLASS_NAME, mdc.get(OnapLogConfiguration.MDC_CLASS_NAME));
+        assertEquals(PROCESS_KEY, mdc.get(OnapLogConfiguration.MDC_PROCESS_KEY));
+        assertEquals(String.valueOf(ALERT_SEVERITY), mdc.get(OnapLogConfiguration.MDC_ALERT_SEVERITY));
+        assertEquals(CUSTOM_FIELD1, mdc.get(OnapLogConfiguration.MDC_OPT_FIELD1));
+        assertEquals(CUSTOM_FIELD2, mdc.get(OnapLogConfiguration.MDC_OPT_FIELD2));
+        assertEquals(CUSTOM_FIELD3, mdc.get(OnapLogConfiguration.MDC_OPT_FIELD3));
+        assertEquals(CUSTOM_FIELD4, mdc.get(OnapLogConfiguration.MDC_OPT_FIELD4));
+        assertEquals(REMOTE_HOST, mdc.get(OnapLogConfiguration.MDC_REMOTE_HOST));
+        assertEquals(SERVICE_NAME, mdc.get(OnapLogConfiguration.MDC_SERVICE_NAME));
+        assertEquals(PARENT_NAME, mdc.get(OnapLogConfiguration.MDC_PARTNER_NAME));
+        assertEquals(String.valueOf(RESPONSE_CODE), mdc.get(OnapLogConfiguration.MDC_RESPONSE_CODE));
+        assertEquals(SERVICE_INSTANCE_ID, mdc.get(OnapLogConfiguration.MDC_SERVICE_INSTANCE_ID));
+        assertEquals(KEY_REQUEST_ID, mdc.get(OnapLogConfiguration.MDC_KEY_REQUEST_ID));
 
-        assertNotNull(mdc.get(IOnapLogConfiguration.MDC_BEGIN_TIMESTAMP));
+        assertNotNull(mdc.get(OnapLogConfiguration.MDC_BEGIN_TIMESTAMP));
     }
 
     class LoggerAdapter {
