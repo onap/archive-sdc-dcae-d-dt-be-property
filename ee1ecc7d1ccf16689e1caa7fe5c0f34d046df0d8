@@ -1,0 +1,9 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+1: Piotr Borelowski <p.borelowski@partner.samsung.com>
+Code-Review+1: Marcin Kowalski <m.kowalski3@partner.samsung.com>
+Code-Review+2: Ofir Sonsino <ofir.sonsino@intl.att.com>
+Submitted-by: Ofir Sonsino <ofir.sonsino@intl.att.com>
+Submitted-at: Mon, 17 Jun 2019 15:46:48 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/sdc/dcae-d/dt-be-property/+/89992
+Project: sdc/dcae-d/dt-be-property
+Branch: refs/heads/master
