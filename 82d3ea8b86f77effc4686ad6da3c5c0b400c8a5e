@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c33e9a64_2f63aebd",
+        "filename": "src/test/java/org/onap/sdc/common/onaplog/OnapLoggerGenericTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5336
+      },
+      "writtenOn": "2019-06-18T09:50:56Z",
+      "side": 1,
+      "message": "pleeeease, remove the +",
+      "range": {
+        "startLine": 35,
+        "startChar": 53,
+        "endLine": 35,
+        "endChar": 54
+      },
+      "revId": "82d3ea8b86f77effc4686ad6da3c5c0b400c8a5e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
