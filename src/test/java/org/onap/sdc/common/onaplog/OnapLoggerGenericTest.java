@@ -31,8 +31,8 @@ import uk.org.lidalia.slf4jtest.LoggingEvent;
 
 public class OnapLoggerGenericTest {
 
-    private static final String FIRST_ERROR_EXPECTED_MESSAGE = "call to stop without calling start first, " +
-            "this is not compliant with EELF format";
+    private static final String FIRST_ERROR_EXPECTED_MESSAGE =
+        "call to stop without calling start first, " + "this is not compliant with EELF format";
     private static final String SECOND_ERROR_EXPECTED_MESSAGE = "failed to calculate elapsed time";
     private static final String ERROR = "ERROR";
 
