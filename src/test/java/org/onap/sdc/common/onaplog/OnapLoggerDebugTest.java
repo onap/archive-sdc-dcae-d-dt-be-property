@@ -28,7 +28,7 @@ import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
 
-import org.onap.sdc.common.onaplog.Enums.LogLevel;
+import org.onap.sdc.common.onaplog.enums.LogLevel;
 import org.slf4j.MDC;
 
 import uk.org.lidalia.slf4jtest.LoggingEvent;

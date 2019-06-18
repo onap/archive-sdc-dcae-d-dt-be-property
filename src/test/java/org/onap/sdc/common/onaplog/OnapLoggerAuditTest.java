@@ -39,9 +39,9 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import org.onap.sdc.common.onaplog.Enums.LogLevel;
-import org.onap.sdc.common.onaplog.Enums.OnapLoggerErrorCode;
-import org.onap.sdc.common.onaplog.Enums.Severity;
+import org.onap.sdc.common.onaplog.enums.LogLevel;
+import org.onap.sdc.common.onaplog.enums.OnapLoggerErrorCode;
+import org.onap.sdc.common.onaplog.enums.Severity;
 import org.slf4j.MDC;
 
 import uk.org.lidalia.slf4jtest.LoggingEvent;

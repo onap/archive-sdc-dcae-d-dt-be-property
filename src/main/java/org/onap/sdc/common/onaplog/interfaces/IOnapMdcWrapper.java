@@ -1,7 +1,7 @@
 package org.onap.sdc.common.onaplog.interfaces;
 
 import org.onap.sdc.common.onaplog.OnapMDCWrapper;
-import org.onap.sdc.common.onaplog.Enums.Severity;
+import org.onap.sdc.common.onaplog.enums.Severity;
 
 /**
  * Created by dd4296 on 12/25/2017.
