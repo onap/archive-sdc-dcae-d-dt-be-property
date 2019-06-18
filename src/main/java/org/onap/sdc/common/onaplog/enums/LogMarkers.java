@@ -1,4 +1,4 @@
-package org.onap.sdc.common.onaplog.Enums;
+package org.onap.sdc.common.onaplog.enums;
 
 public enum LogMarkers {
     DEBUG_MARKER("DEBUG_MARKER"),

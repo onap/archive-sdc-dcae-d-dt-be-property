@@ -1,6 +1,6 @@
 package org.onap.sdc.common.onaplog.interfaces;
 
-import org.onap.sdc.common.onaplog.Enums.LogLevel;
+import org.onap.sdc.common.onaplog.enums.LogLevel;
 
 /**
  * Created by dd4296 on 12/24/2017.
