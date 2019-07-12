@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "84d1e727_313838bf",
+        "filename": "src/main/java/org/onap/sdc/common/onaplog/OnapLoggerBase.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 3717
+      },
+      "writtenOn": "2019-07-12T11:31:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "234b0762_4c18bfc2",
+      "revId": "775b3ad4f8eec7ebc119fd8685c30c81a525cf23",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fcb76547_88f673aa",
         "filename": "src/test/java/org/onap/sdc/common/onaplog/OnapLoggerAuditTest.java",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2019-07-11T11:48:45Z",
       "side": 1,
       "message": "doubled license",
+      "revId": "775b3ad4f8eec7ebc119fd8685c30c81a525cf23",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c3fed8e3_d3a8ca0f",
+        "filename": "src/test/java/org/onap/sdc/common/onaplog/OnapLoggerAuditTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 3717
+      },
+      "writtenOn": "2019-07-12T11:31:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fcb76547_88f673aa",
       "revId": "775b3ad4f8eec7ebc119fd8685c30c81a525cf23",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "8dc6e554_84c87089",
+        "filename": "src/test/java/org/onap/sdc/dcae/composition/restmodels/ruleeditor/ActionBuilder.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 3717
+      },
+      "writtenOn": "2019-07-12T11:31:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cd3549c1_31e00c07",
+      "revId": "775b3ad4f8eec7ebc119fd8685c30c81a525cf23",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7bb3a0c7_0ed0462c",
         "filename": "src/test/java/org/onap/sdc/dcae/composition/restmodels/ruleeditor/StringTransformActionTest.java",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2019-07-11T11:48:45Z",
       "side": 1,
       "message": "doubled license",
+      "revId": "775b3ad4f8eec7ebc119fd8685c30c81a525cf23",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b3511cc7_d6841b36",
+        "filename": "src/test/java/org/onap/sdc/dcae/composition/restmodels/ruleeditor/StringTransformActionTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 3717
+      },
+      "writtenOn": "2019-07-12T11:31:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7bb3a0c7_0ed0462c",
       "revId": "775b3ad4f8eec7ebc119fd8685c30c81a525cf23",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "75efd01a_7e802a89",
+        "filename": "src/test/java/org/onap/sdc/dcae/composition/restmodels/ruleeditor/TopoSearchActionTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 3717
+      },
+      "writtenOn": "2019-07-12T11:31:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6aa61855_c0580a58",
+      "revId": "775b3ad4f8eec7ebc119fd8685c30c81a525cf23",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2da0361a_250d0cc3",
         "filename": "src/test/java/org/onap/sdc/dcae/composition/restmodels/ruleeditor/UnaryFieldActionTest.java",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2019-07-11T11:48:45Z",
       "side": 1,
       "message": "doubled license",
+      "revId": "775b3ad4f8eec7ebc119fd8685c30c81a525cf23",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cec4f159_8502605d",
+        "filename": "src/test/java/org/onap/sdc/dcae/composition/restmodels/ruleeditor/UnaryFieldActionTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 3717
+      },
+      "writtenOn": "2019-07-12T11:31:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2da0361a_250d0cc3",
       "revId": "775b3ad4f8eec7ebc119fd8685c30c81a525cf23",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
