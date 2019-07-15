@@ -19,7 +19,6 @@
 		<nexus.proxy>https://nexus.onap.org</nexus.proxy>
 		<nexus.snapshots>snapshots</nexus.snapshots>
 		<nexus.releases>releases</nexus.releases>
-		<staging.profile.id>176c31dfe190a</staging.profile.id>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<sonar.sourceEncoding>${project.build.sourceEncoding}</sonar.sourceEncoding>
 		<sonar.skipDesign>true</sonar.skipDesign>
@@ -157,18 +156,6 @@
 						<version>2.10</version>
 					</dependency>
 				</dependencies>
-			</plugin>
-			<!-- Staging Plugin -->
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.7</version>
-				<extensions>true</extensions>
-				<configuration>
-					<nexusUrl>${nexus.proxy}</nexusUrl>
-					<stagingProfileId>${staging.profile.id}</stagingProfileId>
-					<serverId>ecomp-staging</serverId>
-				</configuration>
 			</plugin>
 
 			<plugin>
